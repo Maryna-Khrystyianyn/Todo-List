@@ -17,7 +17,7 @@ body {
   background-image: url("todo-bg2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: var(--background-light);
+  background-color: #eceadd;
   font-family: "Andika", sans-serif;
 }
 
