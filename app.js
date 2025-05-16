@@ -9,6 +9,7 @@ if (taskString) {
   tasks = JSON.parse(taskString);
   
   empty.style.display = "none";
+  console.log("wir haben das gelesen")
   
   //   updateProgressBar();
   //   printTasks();
