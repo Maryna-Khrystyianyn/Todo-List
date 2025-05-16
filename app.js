@@ -2,19 +2,14 @@ const taskString = localStorage.getItem("tasks");
 let tasks = [];
 
 let empty = document.querySelector(".epmty");
-console.log (empty)
+console.log(empty);
 const section = document.querySelector("section");
 
 if (taskString) {
   tasks = JSON.parse(taskString);
-  
-  empty.style.display = "none";
-  console.log("wir haben das gelesen")
-  
-  //   updateProgressBar();
-  //   printTasks();
-} else {empty.style.display = "block";
-   
+} else {
+  console.log("eppty!!!!!!!");
+  empty.style.display = "block";
 }
 
 let newTasks = 0;
@@ -58,10 +53,12 @@ start.addEventListener("click", () => {
 // progress Bar
 function updateProgressBar() {
   let value = 0;
+
   tasks.forEach((task) => {
     if (task.status === "completed") value++;
   });
-  value = (value * 100) / tasks.length;
+
+  if (tasks.length !== 0) value = (value * 100) / tasks.length;
   const bar = document.querySelector(".progress-bar");
   bar.style.width = value + "%";
   let text = document.querySelector(".progress-text");
@@ -70,6 +67,11 @@ function updateProgressBar() {
 // print Tasks
 function printTasks() {
   section.innerText = "";
+  if (tasks.length === 0) {
+    empty.style.display = "block";
+  } else {
+    empty.style.display = "none";
+  }
   for (let i = 0; i < tasks.length; i++) {
     let task = tasks[i];
     const container = document.createElement("div");
