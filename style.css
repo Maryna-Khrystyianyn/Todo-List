@@ -14,19 +14,19 @@
 }
 
 body {
-  background-image: url("todo-bg.jpg");
+  background-image: url("todo-bg2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: var(--background-light);
   font-family: "Andika", sans-serif;
 }
 
-button{
-    transition: transform 0.3s ease;
+button {
+  transition: transform 0.3s ease;
 }
 
 button:hover {
-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .container-h1 {
@@ -50,7 +50,6 @@ h1 {
   font-size: 2.3rem;
   background-color: rgba(248, 225, 225, 0.5);
   margin-bottom: 20px;
-  
 }
 
 #start {
@@ -68,22 +67,22 @@ h1 {
 
 /* for page2 */
 
-.epmty{
-    width: 90%;
-text-align: center;
-background-color: var(--background-light-transparent);
-border-radius: 5px;
-border: 1px solid var(--light-color);
-margin: 20px auto;
-padding: 50px 20px;
+.epmty {
+  width: 90%;
+  text-align: center;
+  background-color: var(--background-light-transparent);
+  border-radius: 5px;
+  border: 1px solid var(--light-color);
+  margin: 20px auto;
+  padding: 50px 20px;
 }
 
-.epmty img{
-    width: 300px;
+.epmty img {
+  width: 300px;
 }
 
-main{
-    display: none;
+main {
+  display: none;
 }
 
 header {
@@ -99,6 +98,9 @@ h2 {
   color: var(--main-color);
   width: 200px;
   margin: 7px 30px;
+}
+h3 {
+  display: none;
 }
 
 .progres {
@@ -122,78 +124,191 @@ h2 {
 .progress-bar {
   height: 100%;
   width: 0%;
-  background-color:var(--light-color);
+  background-color: var(--light-color);
 }
 
-.progress-text{
-    margin-right: 20px;
+.progress-text {
+  margin-right: 20px;
 }
- 
+
 /* new task */
-.new-task{
-    margin: 10px;
+.new-task {
+  margin: 10px;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  align-items: end;
 }
 
 input {
-    padding: 10px;
-    background-color: var(--background-light);
-    min-width: 300px;
-    height: 40px;
-    border: 2px solid var(--light-color);
-    border-radius: 17px;
-  }
+  padding: 10px;
+  background-color: var(--background-light);
+  width: 300px;
+  height: 40px;
+  border: 2px solid var(--light-color);
+  border-radius: 7px;
+}
 
-  #add-task {
-    width: 100px;
-    height: 40px;
-    background: linear-gradient(
-      45deg,
-      var(--background-light),
-      var(--light-color)
-    );
-    border: 2px solid var(--light-color);
-    border-radius: 50%;
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--main-color);
-    cursor: pointer;
-    transition: transform 0.5s ease;
-    width: 40px;
-    height: 40px;
-    position: relative;
-    left: -35px;
-    top: 7px;
-  }
+#add-task {
+  width: 70px;
+  height: 30px;
+  background: linear-gradient(
+    45deg,
+    #fffaf9,
+    #f8d5cf
+  );
+  border: 2px solid var(--light-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--main-color);
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  /* width: 40px;
+  height: 40px;
+  position: relative;
+  left: -35px;
+  top: 7px; */
+}
 
-  #add-task:hover {
-    background: linear-gradient(45deg, var(--main-color), var(--main-color));
+#add-task:hover {
+  background: linear-gradient(45deg, var(--main-color), var(--main-color));
   transform: scale(1.1);
-    color: var(--background-light);
-  }
+  color: var(--background-light);
+}
 
-  .error{
-    color:red;
-    font-style: italic;
-    display: none;
-  }
+.error {
+  color: red;
+  font-style: italic;
+  display: none;
+}
 
-  h4{
-    margin: 20px 0 0 40px;
-    color: var(--light-color);
-  }
+h4 {
+  margin: 20px 0 0 40px;
+  color: var(--light-color);
+}
 
-  section {
+section {
   width: 90%;
   margin: 10px auto;
-
 }
 
-.inspiraton{
+.task-container {
+  width: 100%;
+  min-height: 40px;
+  margin-top: 10px;
+  background-color: var(--background-light-transparent);
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid var(--light-color);
+  border-radius: 5px;
+  align-items: center;
+}
+
+.task-text {
+  padding: 0 10px;
+  color: var(--main-color);
+  width: 300px;
+}
+
+.task-status{
+width:90px;
+text-align: center;
+border: 1px solid var(--light-color);
+padding:5px;
+border-radius: 5px;
+}
+.task-action{
+display: flex;
+justify-content: space-between;
+width: 240px;
+}
+
+
+.inspiraton {
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: rgb(88, 136, 209);
+}
+
+@media (max-width: 640px) {
+  .task-container {
+    flex-direction: column;
+    align-items: end;
+    gap: 7px;
+    background-color:var(--background-light);
+    background: none; 
+    border: none;
+    margin-bottom: 30px;
+  }
+
+  .task-text {
+    background-color:var(--background-light);
+    border: 1px solid var(--light-color);
+
+     border-radius:5px; 
+    /* margin-top: 10px; */
+    height: 50px;
+    padding: 5px;
     width: 100%;
-    padding: 30px;
-    text-align: center;
-    font-style: italic;
+  }
+.task-action{
+    width: 200px;
+    background-color:var(--background-light);
+    border-radius: 5px; 
+    border: 1px solid var(--light-color);
+    padding: 5px;
+    
+}
+
+
+  h2 {
     font-size: 1.3rem;
-    color: rgb(88, 136, 209)
+  }
+}
+
+@media (max-width: 460px) {
+  h2 {
+    display: none;
+  }
+  h3 {
+    display: block;
+    font-style: italic;
+    color: var(--main-color);
+    width: 100px;
+    margin: 7px 30px;
+  }
+
+  input {
+    width: 80%;
+    /* margin: 5px auto; */
+  }
+
+  form {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .epmty img {
+    width: 250px;
+  }
+}
+
+@media (max-width: 350px) {
+  input {
+    width: 270px;
+  }
+  .epmty img {
+    width: 200px;
+  }
 
 }
+@media (max-width: 290px) {
+    input {
+      width: 220px;
+    }
+  }

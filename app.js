@@ -81,24 +81,8 @@ function printTasks() {
     const edit = document.createElement("button");
     const del = document.createElement("button");
 
-    container.style.cssText = `
-    width:100%;
-    min-height: 40px;
-    margin-top:10px;
-    background-color: var(--background-light-transparent);
-    display:flex;
-    justify-content: space-between;
-    border: 1px solid var(--light-color);
-    border-radius: 5px;
-    align-items: center;
-    
-    `;
-
-    action.style.cssText = `
-    display:flex;
-    justify-content: space-between;
-    width:240px
-    `;
+    container.classList.add("task-container");
+    action.classList.add("task-action");
 
     edit.textContent = "🖊️ ";
     edit.style.cssText = `
@@ -110,17 +94,10 @@ function printTasks() {
     `;
 
     name.textContent = task.name;
-    name.style.cssText = `
-    padding: 0 10px;
-    color: var(--main-color); 
-    width: 300px
-    `;
+    name.classList.add("task-text");
+
     status.textContent = task.status;
-    status.style.width = "90px";
-    status.style.textAlign = "center";
-    status.style.border = "1px solid var(--light-color)";
-    status.style.padding = "5px";
-    status.style.borderRadius = "5px";
+    status.classList.add("task-status");
 
     if (task.status === "new") {
       status.style.color = "green";
@@ -194,13 +171,14 @@ function printTasks() {
 updateProgressBar();
 printTasks();
 
-// edd new task
+
 function renderTask() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
   updateProgressBar();
   printTasks();
 }
 
+// edd new task
 const form = document.getElementById("task-form");
 const input = document.getElementById("task-input");
 const submit = document.getElementById("add-task");
