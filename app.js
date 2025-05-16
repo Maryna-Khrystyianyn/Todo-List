@@ -9,11 +9,11 @@ if (taskString) {
   tasks = JSON.parse(taskString);
   
   empty.style.display = "none";
-  section.style.display = "block";
+  
   //   updateProgressBar();
   //   printTasks();
-} else {empty.style.display = "none";
-    section.style.display = "block";
+} else {empty.style.display = "block";
+   
 }
 
 let newTasks = 0;
