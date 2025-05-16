@@ -50,6 +50,7 @@ h1 {
   font-size: 2.3rem;
   background-color: rgba(248, 225, 225, 0.5);
   margin-bottom: 20px;
+  
 }
 
 #start {
@@ -66,6 +67,21 @@ h1 {
 }
 
 /* for page2 */
+
+.epmty{
+    width: 90%;
+text-align: center;
+background-color: var(--background-light-transparent);
+border-radius: 5px;
+border: 1px solid var(--light-color);
+margin: 20px auto;
+padding: 50px 20px;
+}
+
+.epmty img{
+    width: 300px;
+}
+
 main{
     display: none;
 }

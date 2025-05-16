@@ -1,27 +1,19 @@
 const taskString = localStorage.getItem("tasks");
 let tasks = [];
 
+let empty = document.querySelector(".epmty");
+console.log (empty)
+const section = document.querySelector("section");
+
 if (taskString) {
   tasks = JSON.parse(taskString);
+  
+  empty.style.display = "none";
+  section.style.display = "block";
   //   updateProgressBar();
   //   printTasks();
-} else {
-  tasks[0] = {
-    name: "test",
-    status: "new",
-  };
-  tasks[1] = {
-    name: "test2",
-    status: "in process",
-  };
-  tasks[2] = {
-    name: "test3",
-    status: "completed",
-  };
-  tasks[3] = {
-    name: "test4",
-    status: "completed",
-  };
+} else {empty.style.display = "none";
+    section.style.display = "block";
 }
 
 let newTasks = 0;
@@ -42,7 +34,7 @@ let statistic = document.querySelector(".task-statistics");
 
 let newSpan = document.createElement("span");
 newSpan.textContent = `New - ${newTasks}, `;
-newSpan.style.color = "green";
+newSpan.style.color = "#557c3b";
 
 let processSpan = document.createElement("span");
 processSpan.textContent = ` in Process - ${processTasks}, `;
@@ -76,7 +68,6 @@ function updateProgressBar() {
 }
 // print Tasks
 function printTasks() {
-  let section = document.querySelector("section");
   section.innerText = "";
   for (let i = 0; i < tasks.length; i++) {
     let task = tasks[i];
@@ -179,7 +170,7 @@ function printTasks() {
   }
   //Zitaten
 
-let inspirations = [
+  let inspirations = [
     " A goal without a plan is just a wish. ",
     "Good planning replaces chance with intention.",
     "Success is the sum of small efforts repeated day in and day out.",
@@ -191,11 +182,10 @@ let inspirations = [
     "You don’t have to be great to start, but you have to start to be great.",
     "The best preparation for tomorrow is doing your best today.",
   ];
-  
+
   let inspiration = document.querySelector(".inspiraton");
   inspiration.textContent =
     inspirations[Math.floor(Math.random() * inspirations.length)];
-  
 }
 
 updateProgressBar();
@@ -229,4 +219,3 @@ form.addEventListener("submit", (e) => {
     error.style.display = "block";
   }
 });
-
